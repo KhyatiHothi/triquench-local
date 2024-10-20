@@ -1,0 +1,72 @@
+
+@import "./theme-colors";
+.banner-section{
+    padding: 10rem 0;
+    background: linear-gradient(110.09deg, #0C9ED9 29.47%, #1965A7 103.98%), #2B2626;
+    .container{
+        max-width: 144rem;
+        padding: 0 3rem;
+        z-index: 1;
+        position: relative;
+    }
+    .slider-navgation-wrapper{
+        display: flex;
+        .banner-navigation-wrapper{
+            max-width: 32.8rem;
+            flex: 0 0 32.8rem;
+            .white-box{
+                background-color: $white;
+                border-radius: 2rem;
+                padding: 3rem;
+                .title{
+                    font-weight: 700;
+                    font-size: 2.4rem;
+                    font-family: "Lora", serif;
+                    display: block;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+        .slider-wrapper{
+            flex: 1;
+            padding-left: 5rem;
+            max-width: 100%;
+            overflow: hidden;
+            .swiper{
+                max-width: 100%;
+                padding-bottom: 7rem;
+                .swiper-flex-wrap{
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    .left{
+                        max-width: 50%;
+                        flex: 0 0 50%;
+                        .sub-title{
+                            font-family: "Montserrat", sans-serif;
+                            font-size: 2rem;
+                            color: $white;
+                            text-transform: uppercase;
+                        }
+                        p{
+                            color: $white;
+                            font-size: 1.8rem;
+                        }
+                        .btn-wrapper{
+                            a{
+                                + a{
+                                    margin-left: 2rem;
+                                }
+                            }
+                        }
+                    }
+                    .right{
+                        max-width: 50%;
+                        flex: 0 0 50%;
+                    }
+                }
+
+            }
+        }
+    }
+}

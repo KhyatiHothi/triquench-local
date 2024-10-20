@@ -1,0 +1,291 @@
+.site-header{
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    transition: .5s;
+    .header-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo-wrapper{
+            max-width: 14.6rem;
+            flex: 0 0 14.6rem;
+            padding-right: 1rem;
+            a{
+                display: block;
+                z-index: 999;
+                position: relative;
+                img{
+                    width: 8.6rem;
+                }
+            }
+        }
+        .navigation-wrapper{
+            flex: 1;
+            @include bp("tablet-max") {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: $white;
+                z-index: -1;
+                opacity: 0;
+                transition: .3s;
+                transform: translateX(101%);
+            }
+            .open-menu &{
+                transform: translateX(0);
+                z-index: 8;
+                opacity: 1;
+            }
+            ul{
+                display: flex;
+                justify-content: center;
+                @include bp(tablet-max) {
+                    display: block;
+                    margin: 11rem 0 0;
+                    padding: 0 2.5rem 2.5rem;
+                    height: calc(100vh - 100px);
+                    overflow-y: auto;
+                }
+                li{
+                    a{
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                          &:hover{
+                            color: $green;
+                          }
+                          @include bp(tablet-max) {
+                            font-size: 1.6rem;
+                          }
+
+                    }
+                    + li{
+                        margin-left: 3rem;
+                        @include bp(tablet-max) {
+                            margin-left:0;
+                            margin-top: 2rem;
+                        }
+                    }
+                }
+            }
+
+        }
+        .contact-wrapper{
+            max-width: 14.6rem;
+            flex: 0 0 14.6rem;
+            padding-left: 1rem;
+          
+            img{
+                display: none;
+                @include bp("tablet-max") {
+                    display: inline-block;
+                    height: 18px;
+                }
+            }
+            .border-btn{
+                @include bp("tablet-max") {
+                    font-size: 0;
+                    border: none;
+                    padding: 0;
+                    &:hover{
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+
+    }
+    .hamburger-icon{
+        position: relative;
+        width: 1.6rem;
+        height: 1.3rem;
+        cursor: pointer;
+        z-index: 999;
+        position: relative;
+        margin-left: 1rem;
+        display: none;
+        @include bp(tablet-max) {
+            display: block;
+        }
+        > span{
+            transition: all .3s;
+            display: block;
+            position: absolute;
+            border: .1rem solid $primaryColor;
+            width: 100%;
+            background: $primaryColor;
+            opacity: 1;
+            left: 0;
+            border-radius: .5rem;
+           
+         
+            &:nth-child(1){
+                top: 0;
+                .open-menu &{
+                    transform: rotate(45deg);
+                    top: .7rem;
+                }
+            }
+            &:nth-child(2){
+                top: .5rem;
+                .open-menu &{
+                   opacity: 0;
+                }
+            }
+            &:nth-child(3){
+                top: 1.1rem;
+                .open-menu &{
+                    transform: rotate(-45deg);
+                    top: .7rem;
+                }
+            }
+        }
+       
+    }
+}
+
+.site-footer{
+    background-color: $primaryColor;
+    .container{
+        z-index: 3;
+        position: relative;
+    }
+    .footer-bottom{
+        padding: 0 0 3rem 0;
+        .left{
+            color: $white;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+        .right{
+            li{
+                img{
+                    width: 3.8rem;
+                    height: auto;
+                }
+                + li{
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+    .footer-top{
+        padding: 4.2rem 5rem 5rem;
+        border-top: 0.8rem solid $green;
+        box-shadow: 0px -6px 34px rgba(0, 96, 152, 0.04);
+        border-radius: 0 0 2rem 2rem;
+        top: -5.2rem;
+        background-color: #fff;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        .logo-wrapper{
+            max-width: 25%;
+            flex:0 0 25%;
+            display: flex;
+            flex-direction: column;
+            padding-right: 3rem;
+            justify-content: space-between;
+            .logo-block{
+                margin-bottom: 2rem;
+                a{
+                    display: block;
+                    img{
+                        width: 6.4rem;
+                    }
+                }
+            }
+            .social-media-wrapper{
+                .title{
+                    font-weight: 600;
+                    display: block;
+                    margin-bottom: 1rem;
+                }
+                ul{
+                    li{
+                        a{
+                            width: 3rem;
+                            height: 3rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 0.1rem solid $white;
+                            background-color: $primaryColor;
+                            padding: 0.8rem;
+                            border-radius: 50%;
+                            &:hover{
+                                background-color: $secondaryColor;
+                            }
+                        }
+                        + li{
+                            margin-left: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .footer-contact-wrapper{
+            max-width: 25%;
+            flex:0 0 25% ;
+            .contact-title{
+                font-size: 1.4rem;
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+                border-bottom: 0.1rem solid $gray1;
+                display: block;
+            }
+            a{
+                display: block;
+                font-size: 2rem;
+                font-weight: 600;
+              
+                &:hover{
+                  color: $green
+                }
+                + a{
+                    margin-top: 1rem;
+                }
+              
+            }
+
+        }
+        .links-wrapper{
+            max-width: 50%;
+            flex: 0 0 50%;
+            .link-inner{
+                display: flex;
+                flex-wrap: wrap;
+                padding-right: 2rem;
+                .links-inner-wrapper{
+                    max-width: 33.33%;
+                    flex: 0 0 33.33%;
+                    .footer-title{
+                        font-weight: 600;
+                        display: block;
+                        margin-bottom: 1rem;
+                    }
+                    ul{
+                        li{
+                            a{
+                                font-size: 1.4rem;
+                                &:hover{
+                                    text-decoration: underline !important;
+                                }
+                            }
+                            + li{
+                                margin-top: .8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
